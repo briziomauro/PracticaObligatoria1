@@ -131,9 +131,10 @@ function App() {
     const directorNolan = watchList.map((x) => {
       if (x.Director === "Christopher Nolan" && parseFloat(x.imdbRating) > 8.0) {
         return x.Title
-      }
+      } 
+      return null;
     });
-    return directorNolan
+    return directorNolan.filter((title) => title !== null);
   }
 
   const titlesArray = returnMovieTitle(watchList);
