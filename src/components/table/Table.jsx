@@ -10,23 +10,22 @@ const Tables = ({ netIncomes }) => {
     return (
         <>
             <h1 className='text-light mb-5'>Practica Obligatoria 2: </h1>
-            {netIncomes.map((net, index) => (
-                <Table key={index} striped bordered>
-                    <thead>
-                        <tr>
-                            <th>Marca</th>
-                            <th>Ingreso Neto</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <Table striped bordered>
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Ingreso Neto</th>
+                    </tr>
+                </thead>
+                {netIncomes.map((net, index) => (
+                    <tbody key={index}>
                         <tr>
                             <td>{net.brand}</td>
                             <td>{`$${net.income}`}</td>
                         </tr>
                     </tbody>
-                </Table>
-
-            ))}
+                ))}
+            </Table>
             <p className='text-light'>INGRESO PROMEDIO DE LAS 3 EMPRESAS: ${averageIncome.toFixed(2)} </p>
         </>
     );
