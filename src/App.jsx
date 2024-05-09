@@ -1,9 +1,11 @@
 import './App.css'
-import Login from './components/login/Login'
+import ListView from './components/listView/ListView'
 
 function App() {
   return (
-    <Login/>
+    <>
+      <ListView />
+    </>
   )
 }
 
